@@ -21,7 +21,8 @@ var MyApp = function (_React$Component) {
 		var _this = _possibleConstructorReturn(this, (MyApp.__proto__ || Object.getPrototypeOf(MyApp)).call(this));
 
 		_this.state = {
-			todos: ToDoData
+			todos: ToDoData,
+			isLoading: true
 			// {Object}
 		};_this.updateState = _this.updateState.bind(_this);
 		return _this;
@@ -43,16 +44,22 @@ var MyApp = function (_React$Component) {
 
 	}, {
 		key: "componentDidMount",
-		value: function componentDidMount() {}
+		value: function componentDidMount() {
+			var _this2 = this;
+
+			setTimeout(function () {
+				_this2.setState({
+					isLoading: false
+				});
+			}, 1500);
+		}
 		/** 
    * check if the props received has changed
    * @param {Object}
    * @deprecated 16.3
-   * */
-
-	}, {
-		key: "componentWillReceiveProps",
-		value: function componentWillReceiveProps(nextProps) {}
+   * 
+  componentWillReceiveProps(nextProps) {
+  	}*/
 		/** 
    * should component re-render
    * @return {Boolean}
@@ -60,7 +67,9 @@ var MyApp = function (_React$Component) {
 
 	}, {
 		key: "shouldComponentUpdate",
-		value: function shouldComponentUpdate(nextProps, nextState) {}
+		value: function shouldComponentUpdate(nextProps, nextState) {
+			return true;
+		}
 		/** 
    * clean-up code before component disappears
    * */
@@ -70,20 +79,17 @@ var MyApp = function (_React$Component) {
 		value: function componentWillUnmount() {}
 		/** 
    * @deprecated 16.3
-   * */
-
-	}, {
-		key: "componentWillUpdate",
-		value: function componentWillUpdate() {}
+   * 
+  componentWillUpdate() {
+  	}*/
 		/** 
    * create backup of current state
    * https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate
    * @returns {Object}
    * */
+		//getSnapshotBeforeUpdate() {
 
-	}, {
-		key: "getSnapshotBeforeUpdate",
-		value: function getSnapshotBeforeUpdate() {}
+		//}
 		/** 
    * return the new, updated state based on the props
    * https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
@@ -93,20 +99,23 @@ var MyApp = function (_React$Component) {
    * @param {Object}
    * @returns {Object}
    * */
-
-	}, {
-		key: "render",
-
+		//static getDerivedStateFromProps(props, state) {
+		//	return {}
+		//}
 		/** 
    * 
    * */
+
+	}, {
+		key: "render",
 		value: function render() {
 			var ToDoComponent = buildToDoComponent(this.updateState);
 			return React.createElement(
 				"div",
 				null,
 				React.createElement(Header, { firstName: firstName, lastName: lastName }),
-				ToDoComponent
+				ToDoComponent,
+				React.createElement(Loading, { isLoading: this.state.isLoading })
 			);
 		}
 
@@ -138,9 +147,6 @@ var MyApp = function (_React$Component) {
 				};
 			});
 		}
-	}], [{
-		key: "getDerivedStateFromProps",
-		value: function getDerivedStateFromProps(props, state) {}
 	}]);
 
 	return MyApp;

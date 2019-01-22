@@ -1,6 +1,7 @@
 <?php 
 $version = strtotime('now');
 $scripts = [
+	'Loading',
 	'ToDoItem',
 	'ToDoData',
 	'Product',
@@ -25,6 +26,7 @@ $scripts = [
 				background-color: whitesmoke;
 			}
 			#root {
+				position: relative;
 				background-color: white;
 				margin: auto;
 				width: 414px;
@@ -90,6 +92,16 @@ $scripts = [
 			table td {
 				font-size: 10px;
     			padding: 10px 0px;
+			}
+			#loading {
+				z-index: 9999;
+				text-align: center;
+				width: 100%;
+				padding: 30% 0;
+				position: absolute;
+				left: 0px;
+				top: 0px;
+				background-color: #fff;
 			}
 		</style>
 	</head>

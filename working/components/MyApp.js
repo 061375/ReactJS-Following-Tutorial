@@ -8,7 +8,8 @@ class MyApp extends React.Component {
 		super()
 		// {Object}
 		this.state = {
-			todos: ToDoData
+			todos: ToDoData,
+			isLoading: true
 		}
 		// {Object}
 		this.updateState = this.updateState.bind(this);
@@ -26,22 +27,26 @@ class MyApp extends React.Component {
 	 * a ready state handler
 	 * */
 	componentDidMount() {
-
+		setTimeout(() => {
+			this.setState({
+				isLoading: false
+			})
+		}, 1500)
 	}
 	/** 
 	 * check if the props received has changed
 	 * @param {Object}
 	 * @deprecated 16.3
-	 * */
+	 * 
 	componentWillReceiveProps(nextProps) {
 
-	}
+	}*/
 	/** 
 	 * should component re-render
 	 * @return {Boolean}
 	 * */
 	shouldComponentUpdate(nextProps, nextState) {
-		
+		return true;
 	}
 	/** 
 	 * clean-up code before component disappears
@@ -51,18 +56,18 @@ class MyApp extends React.Component {
 	}
 	/** 
 	 * @deprecated 16.3
-	 * */
+	 * 
 	componentWillUpdate() {
 
-	}
+	}*/
 	/** 
 	 * create backup of current state
 	 * https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate
 	 * @returns {Object}
 	 * */
-	getSnapshotBeforeUpdate() {
+	//getSnapshotBeforeUpdate() {
 
-	}
+	//}
 	/** 
 	 * return the new, updated state based on the props
 	 * https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
@@ -72,9 +77,9 @@ class MyApp extends React.Component {
 	 * @param {Object}
 	 * @returns {Object}
 	 * */
-	static getDerivedStateFromProps(props, state) {
-
-	}
+	//static getDerivedStateFromProps(props, state) {
+	//	return {}
+	//}
 	/** 
 	 * 
 	 * */
@@ -82,8 +87,10 @@ class MyApp extends React.Component {
 		const ToDoComponent = buildToDoComponent(this.updateState);
 		return (
 			<div>
+				
 				<Header firstName={firstName} lastName={lastName} />
 				{ToDoComponent}
+				<Loading isLoading={this.state.isLoading} />
 			</div>
 		)	
 	}
