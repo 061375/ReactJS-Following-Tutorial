@@ -13,6 +13,53 @@ class MyApp extends React.Component {
 		// {Object}
 		this.updateState = this.updateState.bind(this);
 	}
+	
+	// ----- LIFECYCLE
+
+	/** 
+	 * a ready state handler
+	 * */
+	componentDidMount() {
+
+	}
+	/** 
+	 * check if the props received has changed
+	 * @param {Object}
+	 * @deprecated 16.3
+	 * */
+	componentWillReceiveProps(nextProps) {
+
+	}
+	/** 
+	 * should component re-render
+	 * @return {Boolean}
+	 * */
+	shouldComponentUpdate(nextProps, nextState) {
+		
+	}
+	/** 
+	 * clean-up code before component disappears
+	 * */
+	componentWillUnmount() {
+
+	}
+	/** 
+	 * 
+	 * */
+	render() {
+		const ToDoComponent = buildToDoComponent(this.updateState);
+		return (
+			<div>
+				<Header firstName={firstName} lastName={lastName} />
+				{ToDoComponent}
+			</div>
+		)	
+	}
+
+
+
+	// ----- START MY METHODS
+
 	/** 
 	 * @param {Number}
 	 * */
@@ -36,16 +83,5 @@ class MyApp extends React.Component {
 			}
 		})
 	}
-	/** 
-	 * 
-	 * */
-	render() {
-		const ToDoComponent = buildToDoComponent(this.updateState);
-		return (
-			<div>
-				<Header firstName={firstName} lastName={lastName} />
-				{ToDoComponent}
-			</div>
-		)	
-	}
+	
 }

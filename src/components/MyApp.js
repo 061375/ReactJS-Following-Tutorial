@@ -26,12 +26,64 @@ var MyApp = function (_React$Component) {
 		};_this.updateState = _this.updateState.bind(_this);
 		return _this;
 	}
+
+	// ----- LIFECYCLE
+
 	/** 
-  * @param {Number}
+  * a ready state handler
   * */
 
 
 	_createClass(MyApp, [{
+		key: "componentDidMount",
+		value: function componentDidMount() {}
+		/** 
+   * check if the props received has changed
+   * @param {Object}
+   * @deprecated 16.3
+   * */
+
+	}, {
+		key: "componentWillReceiveProps",
+		value: function componentWillReceiveProps(nextProps) {}
+		/** 
+   * should component re-render
+   * @return {Boolean}
+   * */
+
+	}, {
+		key: "shouldComponentUpdate",
+		value: function shouldComponentUpdate(nextProps, nextState) {}
+		/** 
+   * clean-up code before component disappears
+   * */
+
+	}, {
+		key: "componentWillUnmount",
+		value: function componentWillUnmount() {}
+		/** 
+   * 
+   * */
+
+	}, {
+		key: "render",
+		value: function render() {
+			var ToDoComponent = buildToDoComponent(this.updateState);
+			return React.createElement(
+				"div",
+				null,
+				React.createElement(Header, { firstName: firstName, lastName: lastName }),
+				ToDoComponent
+			);
+		}
+
+		// ----- START MY METHODS
+
+		/** 
+   * @param {Number}
+   * */
+
+	}, {
 		key: "updateState",
 		value: function updateState(id) {
 			/*
@@ -52,21 +104,6 @@ var MyApp = function (_React$Component) {
 					todos: updatedTodos
 				};
 			});
-		}
-		/** 
-   * 
-   * */
-
-	}, {
-		key: "render",
-		value: function render() {
-			var ToDoComponent = buildToDoComponent(this.updateState);
-			return React.createElement(
-				"div",
-				null,
-				React.createElement(Header, { firstName: firstName, lastName: lastName }),
-				ToDoComponent
-			);
 		}
 	}]);
 
