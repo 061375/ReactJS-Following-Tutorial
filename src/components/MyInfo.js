@@ -1,0 +1,3 @@
+function MyApp() {
+	return React.createElement("section", null, React.createElement("h1", null, "Jeremy Heminger"), React.createElement("p", null, "This is test text blah blah blah. This is test text blah blah blah. This is test text blah blah blah. This is test text blah blah blah. This is test text blah blah blah. This is test text blah blah blah. This is test text blah blah blah. This is test text blah blah blah. This is test text blah blah blah. This is test text blah blah blah."), React.createElement("ul", null, React.createElement("li", null, "A"), React.createElement("li", null, "B"), React.createElement("li", null, "C")));
+}
