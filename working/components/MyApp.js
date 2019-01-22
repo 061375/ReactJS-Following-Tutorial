@@ -1,8 +1,5 @@
-// @const {String}
-const firstName = "Jeremy"
-// @const {String}
-const lastName = "Heminger"
 /** 
+ *
  * 
  * */
 class MyApp extends React.Component {
