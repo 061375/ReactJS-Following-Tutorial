@@ -17,6 +17,12 @@ class MyApp extends React.Component {
 	// ----- LIFECYCLE
 
 	/** 
+	 * @deprecated 16.3
+	 * */
+	componentWillMount() {
+
+	}
+	/** 
 	 * a ready state handler
 	 * */
 	componentDidMount() {
@@ -41,6 +47,32 @@ class MyApp extends React.Component {
 	 * clean-up code before component disappears
 	 * */
 	componentWillUnmount() {
+
+	}
+	/** 
+	 * @deprecated 16.3
+	 * */
+	componentWillUpdate() {
+
+	}
+	/** 
+	 * create backup of current state
+	 * https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate
+	 * @returns {Object}
+	 * */
+	getSnapshotBeforeUpdate() {
+
+	}
+	/** 
+	 * return the new, updated state based on the props
+	 * https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
+	 * @warning https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+	 * @static
+	 * @param {Object}
+	 * @param {Object}
+	 * @returns {Object}
+	 * */
+	static getDerivedStateFromProps(props, state) {
 
 	}
 	/** 

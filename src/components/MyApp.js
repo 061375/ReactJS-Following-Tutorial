@@ -30,11 +30,18 @@ var MyApp = function (_React$Component) {
 	// ----- LIFECYCLE
 
 	/** 
-  * a ready state handler
+  * @deprecated 16.3
   * */
 
 
 	_createClass(MyApp, [{
+		key: "componentWillMount",
+		value: function componentWillMount() {}
+		/** 
+   * a ready state handler
+   * */
+
+	}, {
 		key: "componentDidMount",
 		value: function componentDidMount() {}
 		/** 
@@ -62,11 +69,37 @@ var MyApp = function (_React$Component) {
 		key: "componentWillUnmount",
 		value: function componentWillUnmount() {}
 		/** 
-   * 
+   * @deprecated 16.3
+   * */
+
+	}, {
+		key: "componentWillUpdate",
+		value: function componentWillUpdate() {}
+		/** 
+   * create backup of current state
+   * https://reactjs.org/docs/react-component.html#getsnapshotbeforeupdate
+   * @returns {Object}
+   * */
+
+	}, {
+		key: "getSnapshotBeforeUpdate",
+		value: function getSnapshotBeforeUpdate() {}
+		/** 
+   * return the new, updated state based on the props
+   * https://reactjs.org/docs/hooks-faq.html#how-do-i-implement-getderivedstatefromprops
+   * @warning https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html
+   * @static
+   * @param {Object}
+   * @param {Object}
+   * @returns {Object}
    * */
 
 	}, {
 		key: "render",
+
+		/** 
+   * 
+   * */
 		value: function render() {
 			var ToDoComponent = buildToDoComponent(this.updateState);
 			return React.createElement(
@@ -105,6 +138,9 @@ var MyApp = function (_React$Component) {
 				};
 			});
 		}
+	}], [{
+		key: "getDerivedStateFromProps",
+		value: function getDerivedStateFromProps(props, state) {}
 	}]);
 
 	return MyApp;
