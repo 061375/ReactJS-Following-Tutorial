@@ -28,8 +28,8 @@ function buildToDoComponent(handleChange) {
 	// @let {Number}
 	var i = 0;
 	// @let {Array}
-	var todo = ToDoData.map(function (todo) {
-		i++;
+	var todo = ToDoData.map(function (todo, i) {
+		//i++;
 		return React.createElement(ToDoItem, {
 			id: todo.id,
 			key: i,

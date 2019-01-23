@@ -35,8 +35,8 @@ function buildToDoComponent(handleChange) {
 	let i = 0;
 	// @let {Array}
 	let todo =  ToDoData.map(
-		todo => {
-			i++;
+		(todo, i ) => {
+			//i++;
 			return (<ToDoItem
 				id={todo.id}
 				key={i}
